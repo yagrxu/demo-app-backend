@@ -1,5 +1,7 @@
 os: osx
 language: java
+services:
+    - docker
 jdk:
   - openjdk8
 #build stage
@@ -9,3 +11,7 @@ jobs:
       script: sh ./scripts/unit_test.sh
       on:
         branch: master
+    - stage: unit_test
+      script: sh ./scripts/docker_publish.sh
+      on:
+        branch: master   
