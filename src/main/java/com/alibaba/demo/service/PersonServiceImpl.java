@@ -11,13 +11,15 @@ import com.alibaba.demo.model.Person;
 @Component
 public class PersonServiceImpl {
 
-    @Autowired
-    private PersonMapper personMapper;
+	@Autowired
+	private PersonMapper personMapper;
 
-    public List<Person> getPersons() {
-        System.out.println(personMapper.findAll().size());
-        personMapper.findAll().forEach(person -> System.out.print(person.firstName));
-        return personMapper.findAll();
-    }
+	public List<Person> getPersons() {
+		return personMapper.findAll();
+	}
+
+	public void addPerson(Person person) {
+		personMapper.addPerson(person);
+	}
 
 }
