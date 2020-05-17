@@ -7,7 +7,5 @@ jobs:
   include:
     - stage: unit_test
       script: sh ./scripts/unit_test.sh
-    - stage: packaging
-      script: ./deploy
       on:
         branch: master
